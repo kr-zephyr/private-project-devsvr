@@ -128,7 +128,7 @@
                 <filtering>true</filtering>
             </resource>
             <resource>
-                <directory>profiles/${environment}/resources</directory>
+                <directory>../properties</directory>
             </resource>
             <resource>
                 <directory>src/main/java</directory>
