@@ -16,16 +16,17 @@ import javax.sql.DataSource;
  * Created by zephyr on 15. 8. 28..
  */
 @Configuration
-@MapperScan("com.sz21c.flightlogger.flightlog.dao")
+@MapperScan({"com.sz21c.flightlogger.flightlog.dao"
+        , "com.sz21c.flightlogger.settings.dao"})
 public class MyBatisConfig {
 
     @Bean
     public DataSource dataSource() {
         SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
         dataSource.setDriverClass(com.mysql.jdbc.Driver.class);
-        dataSource.setUrl("jdbc:mysql://dev.sz21c.com:3306/flightlogger");
-        dataSource.setUsername("fl_adm");
-        dataSource.setPassword("flwpvlfm21!");
+        dataSource.setUrl("jdbc:mysql://dev.sz21c.com:3306/my_flight_log");
+        dataSource.setUsername("mfl_db_adm");
+        dataSource.setPassword("mflwpvlfm21!");
 
         return dataSource;
     }

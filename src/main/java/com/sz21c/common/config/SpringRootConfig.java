@@ -14,7 +14,9 @@ import org.springframework.stereotype.Service;
 @Configuration
 @ComponentScan(
         basePackages = "com.sz21c", useDefaultFilters=false,
-        includeFilters={@ComponentScan.Filter(Controller.class), @ComponentScan.Filter(Service.class), @ComponentScan.Filter(Repository.class)}
+        includeFilters={@ComponentScan.Filter(Controller.class)
+                , @ComponentScan.Filter(Service.class)
+                , @ComponentScan.Filter(Repository.class)}
 )
 @Import({MyBatisConfig.class})
 public class SpringRootConfig {
