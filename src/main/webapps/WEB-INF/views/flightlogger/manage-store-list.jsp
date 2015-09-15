@@ -36,6 +36,7 @@
             <thead>
             <tr>
               <th>Name</th>
+              <th>Site Url</th>
               <th>Registered applications</th>
               <th>Register date</th>
             </tr>
@@ -43,6 +44,7 @@
             <tbody>
             <tr>
               <td><a href="${pageContext.request.contextPath}/flightlogger/manage/store/1">Simmarket</a></td>
+              <td><a href="http://www.simmarket.com" target="_blank">http://www.simmarket.com</a></td>
               <td>2</td>
               <td>2015-09-15</td>
             </tr>

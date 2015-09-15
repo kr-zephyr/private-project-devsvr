@@ -6,6 +6,7 @@ package com.sz21c.flightlogger.settings.model;
 public class StoreVO {
     private Integer id;
     private String  name;
+    private String  siteUrl;
     private Integer registeredAppCount;
     private Long    rowCreateTime;
     private Long    rowModifyTime;
@@ -48,5 +49,13 @@ public class StoreVO {
 
     public void setRegisteredAppCount(Integer registeredAppCount) {
         this.registeredAppCount = registeredAppCount;
+    }
+
+    public String getSiteUrl() {
+        return siteUrl;
+    }
+
+    public void setSiteUrl(String siteUrl) {
+        this.siteUrl = siteUrl;
     }
 }

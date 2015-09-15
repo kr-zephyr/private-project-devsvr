@@ -46,8 +46,13 @@
 
           <div class="form-group">
             <label>Store Name</label>
-            <input class="form-control" placeholder="Enter Store Name" name="name">
+            <input class="form-control" placeholder="Enter Store Name" name="name"/>
           </div>
+
+            <div class="form-group">
+                <label>Store Url</label>
+                <input class="form-control" placeholder="Enter Store site url address" name="siteUrl"/>
+            </div>
 
             <button type="submit" class="btn btn-default">Add</button>
         </form>
