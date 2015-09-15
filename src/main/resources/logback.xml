@@ -10,6 +10,9 @@
     <logger name="org.springframework" level="info" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
+    <logger name="org.apache.ibatis" level="debug" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
     <logger name="com.sz21c" level="debug" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
