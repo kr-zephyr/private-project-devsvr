@@ -5,34 +5,45 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 import javax.sql.DataSource;
 
-/**
- * Created by zephyr on 15. 8. 28..
- */
 @Configuration
 @MapperScan({"com.sz21c.flightlogger.flightlog.dao"
         , "com.sz21c.flightlogger.settings.dao"})
+@PropertySource("classpath:db.mysql.properties")
 public class MyBatisConfig {
 
+    @Autowired
+    Environment environment;
+
     @Bean
-    public DataSource dataSource() {
+    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
+        return propertySourcesPlaceholderConfigurer;
+    }
+
+    @Bean
+    public DataSource dataSource() throws Exception {
         SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
         dataSource.setDriverClass(com.mysql.jdbc.Driver.class);
-        dataSource.setUrl("jdbc:mysql://dev.sz21c.com:3306/my_flight_log");
-        dataSource.setUsername("mfl_db_adm");
-        dataSource.setPassword("mflwpvlfm21!");
+        dataSource.setUrl(environment.getProperty("db.mysql.url"));
+        dataSource.setUsername(environment.getProperty("db.mysql.username"));
+        dataSource.setPassword(environment.getProperty("db.mysql.password"));
 
         return dataSource;
     }
 
     @Bean
-    public DataSourceTransactionManager dataSourceTransactionManager() {
+    public DataSourceTransactionManager dataSourceTransactionManager() throws Exception{
         return new DataSourceTransactionManager(dataSource());
     }
 
