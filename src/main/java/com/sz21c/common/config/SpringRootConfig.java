@@ -17,4 +17,10 @@ import org.springframework.stereotype.Service;
 @Import({MyBatisConfig.class})
 public class SpringRootConfig {
 
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
+        return propertySourcesPlaceholderConfigurer;
+    }
+
 }
