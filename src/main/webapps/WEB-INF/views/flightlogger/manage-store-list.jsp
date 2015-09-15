@@ -42,12 +42,14 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td><a href="${pageContext.request.contextPath}/flightlogger/manage/store/1">Simmarket</a></td>
-              <td><a href="http://www.simmarket.com" target="_blank">http://www.simmarket.com</a></td>
-              <td>2</td>
-              <td>2015-09-15</td>
-            </tr>
+            <c:forEach items="${storeList}" var="store" varStatus="idx">
+              <tr>
+                <td><a href="${pageContext.request.contextPath}/flightlogger/manage/store/${store.id}">${store.name}</a></td>
+                <td><a href="${store.siteUrl}" target="_blank">${store.siteUrl}</a></td>
+                <td></td>
+                <td>${store.rowCreateTime}</td>
+              </tr>
+            </c:forEach>
             </tbody>
           </table>
         </div>
