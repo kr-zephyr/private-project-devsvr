@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sz21c.flightlogger.settings.dao.StoreDao">
+
+    <resultMap id="storeResultMap" type="com.sz21c.flightlogger.settings.model.StoreVO">
+        <result column="id" property="id" javaType="Integer"/>
+        <result column="name" property="name" javaType="String"/>
+        <result column="site_url" property="siteUrl" javaType="String"/>
+        <result column="row_create_time" property="rowCreateTime" javaType="Long"/>
+        <result column="row_modify_time" property="rowModifyTime" javaType="Long"/>
+    </resultMap>
+    
+    <select id="selectMstStore" resultMap="storeResultMap" parameterType="com.sz21c.flightlogger.settings.model.StoreVO">
+        SELECT
+            id
+            , name
+            , site_url
+            , row_create_time
+            , row_modify_time
+        FROM
+            mst_store
+        <trim prefix="WHERE" prefixOverrides="AND">
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="name != null">
+                name = #{name}
+            </if>
+            <if test="siteUrl != null">
+                site_url = #{siteUrl}
+            </if>
+        </trim>
+        order by row_create_time desc
+    </select>
+
+    <select id="selectMstStoreById" resultMap="storeResultMap" parameterType="Integer">
+        SELECT
+            id
+            , name
+            , site_url
+            , row_create_time
+            , row_modify_time
+        FROM
+            mst_store
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insertMstStore" useGeneratedKeys="true" keyProperty="id"
+            parameterType="com.sz21c.flightlogger.settings.model.StoreVO">
+        INSERT INTO mst_store (name, site_url, row_create_time, row_modify_time)
+        VALUES (#{name}, #{siteUrl}, #{rowCreateTime}, #{rowModifyTime})
+    </insert>
+
+    <update id="updateMstStoreById" parameterType="com.sz21c.flightlogger.settings.model.StoreVO">
+        UPDATE mst_store
+        <set>
+            <if test="name != null">name = #{name},</if>
+            <if test="siteUrl != null">site_url = #{siteUrl},</if>
+            <if test="rowCreateTime != null">row_create_time = #{rowCreateTime},</if>
+            <if test="rowModifyTime != null">row_modify_time = #{rowModifyTime}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteMstStoreById" parameterType="Integer">
+        DELETE FROM mst_store WHERE id = #{id}
+    </delete>
+</mapper>
