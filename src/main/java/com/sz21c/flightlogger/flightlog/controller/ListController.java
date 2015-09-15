@@ -1,5 +1,6 @@
 package com.sz21c.flightlogger.flightlog.controller;
 
+import com.sz21c.flightlogger.common.controller.FlightLoggerBaseController;
 import com.sz21c.flightlogger.flightlog.service.ListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

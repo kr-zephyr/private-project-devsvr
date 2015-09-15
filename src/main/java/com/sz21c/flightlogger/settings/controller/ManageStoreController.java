@@ -1,6 +1,6 @@
 package com.sz21c.flightlogger.settings.controller;
 
-import com.sz21c.flightlogger.flightlog.controller.FlightLoggerBaseController;
+import com.sz21c.flightlogger.common.controller.FlightLoggerBaseController;
 import com.sz21c.flightlogger.settings.model.StoreVO;
 import com.sz21c.flightlogger.settings.service.StoreService;
 import org.slf4j.Logger;
