@@ -11,7 +11,7 @@ public interface StoreDao {
 
     StoreVO selectMstStoreById(Integer id) throws Exception;
 
-    StoreVO insertMstStore(StoreVO storeVO) throws Exception;
+    void insertMstStore(StoreVO storeVO) throws Exception;
 
     StoreVO updateMstStoreById(StoreVO storeVO) throws Exception;
 
