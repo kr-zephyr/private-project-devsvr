@@ -7,9 +7,11 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class TimeUtil {
+    private final static ZoneId zoneId = ZoneId.of("Asia/Seoul");
+
     public static Long getCurrentMilliTime() {
         LocalDateTime localDateTime = LocalDateTime.now();
-        ZonedDateTime zonedDateTime = localDateTime.atZone(ZoneId.of("Asia/Seoul"));
+        ZonedDateTime zonedDateTime = localDateTime.atZone(zoneId);
 
         return zonedDateTime.toInstant().toEpochMilli();
     }
@@ -17,6 +19,6 @@ public class TimeUtil {
     public static String getDateStringFromMilliTime(Long milliTime) {
         Instant instant = Instant.ofEpochMilli(milliTime);
 
-        return instant.atZone(ZoneId.of("Asia/Seoul")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toString();
+        return instant.atZone(zoneId).format(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toString();
     }
 }
