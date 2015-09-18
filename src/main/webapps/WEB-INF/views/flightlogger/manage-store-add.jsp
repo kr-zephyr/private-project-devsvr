@@ -4,8 +4,8 @@
     $(document).ready(function() {
         console.log('document ready!!!');
         $('#store-add-form').submit(function(){
-            console.log('name :: ' + $('name').val());
-            if(!$('#name').attr('value')) {
+            console.log('name :: ' + $('#name').val());
+            if($('#name').val() == '') {
                 alert('Please input store name.');
                 $('#name').focus();
                 return false
@@ -43,11 +43,11 @@
     <div class="row">
       <div class="col-lg-12">
 
-        <form id="store-add-form" name="store-add-form" action="${pageContext.request.contextPath}/flightlogger/manage/store/add" method="post" role="form">
+        <form id="store-add-form" name="store-add-form" action="${pageContext.request.contextPath}/flightlogger/manage/store" method="post" role="form">
 
           <div class="form-group">
             <label>Store Name</label>
-            <input class="form-control" placeholder="Enter Store Name" name="name"/>
+            <input class="form-control" placeholder="Enter Store Name" id="name" name="name"/>
           </div>
 
             <div class="form-group">

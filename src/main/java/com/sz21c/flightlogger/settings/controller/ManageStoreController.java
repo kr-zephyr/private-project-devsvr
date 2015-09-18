@@ -25,11 +25,7 @@ public class ManageStoreController extends FlightLoggerBaseController {
 
     @RequestMapping(value = "/manage/store", method = RequestMethod.GET)
     public ModelAndView getStore(Model model) throws Exception {
-        List<StoreVO> storeVOList = storeService.getStoreList();
-
-        logger.debug("storeVOList size :: " + storeVOList.size());
-
-        model.addAttribute("storeList", storeVOList);
+        model.addAttribute("storeList", getStoreList());
 
         return new ModelAndView("/flightlogger/manage-store-list");
     }
@@ -39,9 +35,18 @@ public class ManageStoreController extends FlightLoggerBaseController {
         return new ModelAndView("/flightlogger/manage-store-add");
     }
 
-    @RequestMapping(value = "/manage/store/add", method = RequestMethod.POST)
-    public ModelAndView addStore(@ModelAttribute StoreVO storeVO) throws Exception {
-        logger.debug("store name :: " + storeVO.getName());
+    @RequestMapping(value = "/manage/store", method = RequestMethod.POST)
+    public ModelAndView addStore(@ModelAttribute StoreVO storeVO, Model model) throws Exception {
+        storeService.addStore(storeVO);
+
+        model.addAttribute("storeList", getStoreList());
+
         return new ModelAndView("/flightlogger/manage-store-list");
+    }
+
+    private List<StoreVO> getStoreList() throws Exception {
+        List<StoreVO> storeVOList = storeService.getStoreList();
+
+        return storeVOList;
     }
 }
