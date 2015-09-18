@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -20,8 +19,6 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {SpringRootConfig.class})
-//TODO TransactionConfiguration deprecate 되었으니 변경해야 함
-@TransactionConfiguration(transactionManager = "dataSourceTransactionManager", defaultRollback = true)
 @Transactional
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StoreServiceTest {
@@ -51,7 +48,7 @@ public class StoreServiceTest {
     }
 
     @Test
-    public void test_002_GetStore() throws Exception {
+    public void test_002_GetStores() throws Exception {
         List<StoreVO> storeList = storeService.getStoreList();
 
         assertNotNull(storeList);
@@ -60,4 +57,5 @@ public class StoreServiceTest {
         logger.info("last created store is " + storeList.get(0).getName());
         logger.info("id of last created store is " + storeList.get(0).getId());
     }
+
 }
