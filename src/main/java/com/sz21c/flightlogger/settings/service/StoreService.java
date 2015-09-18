@@ -1,5 +1,6 @@
 package com.sz21c.flightlogger.settings.service;
 
+import com.sz21c.common.util.TimeUtil;
 import com.sz21c.flightlogger.settings.dao.StoreDao;
 import com.sz21c.flightlogger.settings.model.StoreVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,8 @@ public class StoreService {
     }
 
     public void addStore(StoreVO storeVO) throws Exception {
-        storeVO.setRowCreateTime(System.currentTimeMillis());
-        storeVO.setRowModifyTime(storeVO.getRowCreateTime());
+        storeVO.setRowCreateTime(TimeUtil.getCurrentMilliTime());
+        storeVO.setRowModifyTime(TimeUtil.getCurrentMilliTime());
 
         storeDao.insertMstStore(storeVO);
 
@@ -33,7 +34,7 @@ public class StoreService {
     }
 
     public void modifyStore(StoreVO storeVO) throws Exception {
-        storeVO.setRowModifyTime(System.currentTimeMillis());
+        storeVO.setRowModifyTime(TimeUtil.getCurrentMilliTime());
 
         storeDao.updateMstStoreById(storeVO);
     }

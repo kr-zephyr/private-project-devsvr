@@ -2,9 +2,7 @@
 <%@include file="import/flightlogger-header.jsp"%>
 <script language="JavaScript">
     $(document).ready(function() {
-        console.log('document ready!!!');
         $('#store-add-form').submit(function(){
-            console.log('name :: ' + $('#name').val());
             if($('#name').val() == '') {
                 alert('Please input store name.');
                 $('#name').focus();
