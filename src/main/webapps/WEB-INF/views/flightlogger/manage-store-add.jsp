@@ -2,6 +2,7 @@
 <%@include file="import/flightlogger-header.jsp"%>
 <script language="JavaScript">
     $(document).ready(function() {
+        console.log('document ready!!!');
         $('#store-add-form').submit(function(){
             console.log('name :: ' + $('name').val());
             if(!$('#name').attr('value')) {
@@ -42,7 +43,7 @@
     <div class="row">
       <div class="col-lg-12">
 
-        <form name="store-add-form" action="${pageContext.request.contextPath}/flightlogger/manage/store/add" method="post" role="form">
+        <form id="store-add-form" name="store-add-form" action="${pageContext.request.contextPath}/flightlogger/manage/store/add" method="post" role="form">
 
           <div class="form-group">
             <label>Store Name</label>
