@@ -2,20 +2,22 @@ package com.sz21c.flightlogger.settings.model;
 
 import com.sz21c.common.util.TimeUtil;
 
-import java.util.Calendar;
-
 public class StoreViewModel {
-    private StoreVO storeVO;
+    private StoreVO store;
+    private String dateString;
 
-    public StoreVO getStoreVO() {
-        return storeVO;
+    public StoreViewModel(StoreVO storeVO) {
+        if(storeVO != null) {
+            this.store = storeVO;
+            this.dateString = TimeUtil.getDateStringFromMilliTime(this.store.getRowCreateTime());
+        }
     }
 
-    public void setStoreVO(StoreVO storeVO) {
-        this.storeVO = storeVO;
+    public StoreVO getStore() {
+        return store;
     }
 
     public String getDateString() {
-        return TimeUtil.getDateStringFromMilliTime(this.storeVO.getRowCreateTime());
+        return dateString;
     }
 }

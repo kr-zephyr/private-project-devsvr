@@ -42,12 +42,12 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${storeList}" var="store" varStatus="idx">
+            <c:forEach items="${storeList}" var="storeModel" varStatus="idx">
               <tr>
-                <td><a href="${pageContext.request.contextPath}/flightlogger/manage/store/${store.id}">${store.name}</a></td>
-                <td><a href="${store.siteUrl}" target="_blank">${store.siteUrl}</a></td>
+                <td><a href="${pageContext.request.contextPath}/flightlogger/manage/store/${storeModel.store.id}">${storeModel.store.name}</a></td>
+                <td><a href="${storeModel.store.siteUrl}" target="_blank">${storeModel.store.siteUrl}</a></td>
                 <td></td>
-                <td>${store.rowCreateTime}</td>
+                <td>${storeModel.dateString}</td>
               </tr>
             </c:forEach>
             </tbody>
