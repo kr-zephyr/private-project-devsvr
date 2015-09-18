@@ -17,8 +17,13 @@ public class TimeUtil {
     }
 
     public static String getDateStringFromMilliTime(Long milliTime) {
-        Instant instant = Instant.ofEpochMilli(milliTime);
+        String dateStringFromMilliTime = "Not defined.";
 
-        return instant.atZone(zoneId).format(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toString();
+        if(milliTime != null) {
+            Instant instant = Instant.ofEpochMilli(milliTime);
+            dateStringFromMilliTime = instant.atZone(zoneId).format(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toString();
+        }
+
+        return dateStringFromMilliTime;
     }
 }
