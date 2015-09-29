@@ -9,9 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -26,10 +24,37 @@ public class ManageStoreController extends FlightLoggerBaseController {
     StoreService storeService;
 
     @RequestMapping(value = "/manage/store", method = RequestMethod.GET)
-    public ModelAndView getStore(Model model) throws Exception {
+    public ModelAndView getStores(Model model) throws Exception {
         model.addAttribute("storeList", getStoreList());
 
         return new ModelAndView("/flightlogger/manage-store-list");
+    }
+
+    @RequestMapping(value = "/manage/store/{storeId}", method = RequestMethod.GET)
+    public ModelAndView getStore(@PathVariable Integer storeId, Model model) throws Exception {
+        StoreViewModel storeViewModel = new StoreViewModel(storeService.getStoreById(storeId));
+
+        model.addAttribute("storeInfo", storeViewModel);
+
+        return new ModelAndView("/flightlogger/manage-store-view");
+    }
+
+    @RequestMapping(value = "/manage/store/{storeId}/modify", method = RequestMethod.GET)
+    public ModelAndView getModifyStore(@PathVariable Integer storeId, Model model) throws Exception {
+        StoreViewModel storeViewModel = new StoreViewModel(storeService.getStoreById(storeId));
+
+        model.addAttribute("storeInfo", storeViewModel);
+
+        return new ModelAndView("/flightlogger/manage-store-modify");
+    }
+
+
+    @RequestMapping(value = "/manage/store/{storeId}/modify", method = RequestMethod.PUT)
+    public ModelAndView modifyStore(@PathVariable Integer storeId, @ModelAttribute StoreVO storeVo, Model model) throws Exception {
+        storeVo.setId(storeId);
+        logger.debug("storeVo :: " + storeVo.toString());
+
+        return new ModelAndView("/flightlogger/manage-store-view");
     }
 
     @RequestMapping(value = "/manage/store/add", method = RequestMethod.GET)
