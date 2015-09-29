@@ -46,8 +46,8 @@
               <tr>
                 <td><a href="${pageContext.request.contextPath}/flightlogger/manage/store/${storeModel.store.id}">${storeModel.store.name}</a></td>
                 <td><a href="${storeModel.store.siteUrl}" target="_blank">${storeModel.store.siteUrl}</a></td>
-                <td></td>
-                <td>${storeModel.dateString}</td>
+                <td>${storeModel.registeredAppCount}</td>
+                <td>${storeModel.addedDateString}</td>
               </tr>
             </c:forEach>
             </tbody>
