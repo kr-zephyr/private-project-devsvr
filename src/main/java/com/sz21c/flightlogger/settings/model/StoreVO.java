@@ -7,9 +7,19 @@ public class StoreVO {
     private Integer id;
     private String  name;
     private String  siteUrl;
-    private Integer registeredAppCount;
     private Long    rowCreateTime;
     private Long    rowModifyTime;
+
+    @Override
+    public String toString() {
+        return "StoreVO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", siteUrl='" + siteUrl + '\'' +
+                ", rowCreateTime=" + rowCreateTime +
+                ", rowModifyTime=" + rowModifyTime +
+                '}';
+    }
 
     public Integer getId() {
         return id;
@@ -41,14 +51,6 @@ public class StoreVO {
 
     public void setRowModifyTime(Long rowModifyTime) {
         this.rowModifyTime = rowModifyTime;
-    }
-
-    public Integer getRegisteredAppCount() {
-        return registeredAppCount;
-    }
-
-    public void setRegisteredAppCount(Integer registeredAppCount) {
-        this.registeredAppCount = registeredAppCount;
     }
 
     public String getSiteUrl() {
