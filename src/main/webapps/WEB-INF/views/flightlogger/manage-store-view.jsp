@@ -45,6 +45,18 @@
               <p>${storeInfo.store.siteUrl}</p>
             </td>
           </tr>
+          <tr>
+            <th>Add date</th>
+            <td>
+              <p>${storeInfo.addedDateString}</p>
+            </td>
+          </tr>
+          <tr>
+            <th>Last modify date</th>
+            <td>
+              <p>${storeInfo.modifiedDateString}</p>
+            </td>
+          </tr>
           </tbody>
         </table>
       </div>
