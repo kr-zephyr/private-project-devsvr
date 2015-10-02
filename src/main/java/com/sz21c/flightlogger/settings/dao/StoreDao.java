@@ -13,7 +13,7 @@ public interface StoreDao {
 
     void insertMstStore(StoreVO storeVO) throws Exception;
 
-    StoreVO updateMstStoreById(StoreVO storeVO) throws Exception;
+    void updateMstStoreById(StoreVO storeVO) throws Exception;
 
-    Integer deleteMstStoreById(Integer id) throws Exception;
+    void deleteMstStoreById(Integer id) throws Exception;
 }
