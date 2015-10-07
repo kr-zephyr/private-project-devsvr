@@ -50,8 +50,9 @@ public class ManageStoreController extends FlightLoggerBaseController {
     }
 
 
-    @RequestMapping(value = "/manage/store/{storeId}/modify", method = RequestMethod.PUT)
-    public ModelAndView modifyStore(@PathVariable Integer storeId, @ModelAttribute StoreVO storeVo, Model model) throws Exception {
+    @RequestMapping(value = "/manage/store/{storeId}/modify", method = RequestMethod.POST)
+    public String modifyStore(@PathVariable Integer storeId, @ModelAttribute StoreVO storeVo, Model model) throws Exception {
+        //TODO Mehtod PUT으로 변경해야 함
         //TODO Store 수정 구현
         logger.debug("call put /manage/store/{storeId}/modify");
         storeVo.setId(storeId);
@@ -61,7 +62,7 @@ public class ManageStoreController extends FlightLoggerBaseController {
 
         model.addAttribute("storeInfo", storeViewModel);
 
-        return new ModelAndView("/flightlogger/manage-store-view");
+        return "redirect:/flightlogger/manage/store/" + storeId;
     }
 
     @RequestMapping(value = "/manage/store/add", method = RequestMethod.GET)

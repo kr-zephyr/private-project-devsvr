@@ -40,7 +40,7 @@
 
     <div class="row">
       <div class="col-lg-12">
-        <form id="store-modify-form" name="store-modify-form" action="${pageContext.request.contextPath}/flightlogger/manage/store/${storeInfo.store.id}/modify" method="put" role="form">
+        <form id="store-modify-form" name="store-modify-form" action="${pageContext.request.contextPath}/flightlogger/manage/store/${storeInfo.store.id}/modify" method="post" role="form">
           <h2>Store Information</h2>
           <table class="table table-hover">
             <tbody>
