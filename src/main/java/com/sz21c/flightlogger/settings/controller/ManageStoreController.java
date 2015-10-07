@@ -52,7 +52,6 @@ public class ManageStoreController extends FlightLoggerBaseController {
     @RequestMapping(value = "/manage/store/{storeId}/modify", method = RequestMethod.POST)
     public String modifyStore(@PathVariable Integer storeId, @ModelAttribute StoreVO storeVo, Model model) throws Exception {
         //TODO Mehtod PUT으로 변경해야 함
-        //TODO Store 수정 구현
         storeVo.setId(storeId);
         storeService.modifyStore(storeVo);
 
