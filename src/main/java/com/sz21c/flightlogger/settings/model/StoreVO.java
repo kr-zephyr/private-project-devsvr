@@ -6,7 +6,7 @@ package com.sz21c.flightlogger.settings.model;
 public class StoreVO {
     private Integer id;
     private String  name;
-    private String  siteUrl;
+    private String  siteUrl;    //TODO url pattern validate해야 함
     private Long    rowCreateTime;
     private Long    rowModifyTime;
 
