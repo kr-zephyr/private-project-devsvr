@@ -11,7 +11,7 @@
 <html>
 
 <head>
-  <%@include file="../../common/header.jsp"%>
-  <title>Flight Logger</title>
-  <script language="JavaScript">
-  </script>
+    <%@include file="../../common/header.jsp" %>
+    <title>Flight Logger</title>
+    <script language="JavaScript">
+    </script>

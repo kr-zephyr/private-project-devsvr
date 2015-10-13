@@ -10,7 +10,7 @@
 </div>
 <!-- /#wrapper -->
 
-<%@include file="../../common/tail-script.jsp"%>
+<%@include file="../../common/tail-script.jsp" %>
 </body>
 
 </html>
