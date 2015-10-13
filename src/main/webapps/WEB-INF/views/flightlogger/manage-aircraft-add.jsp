@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="import/flightlogger-header.jsp" %>
 <script language="JavaScript">
-    $(document).ready(function() {
-        $('#aircraft-add-form').submit(function(){
+    $(document).ready(function () {
+        $('#aircraft-add-form').submit(function () {
             //TODO form validation 완료해야 함
-            if($('#name').val() == '') {
+            if ($('#name').val() == '') {
                 alert('Please input store name.');
                 $('#name').focus();
                 return false
             }
 
-            if($('#maxTakeoffDistance').val() == '') {
+            if ($('#maxTakeoffDistance').val() == '') {
                 alert('Please input take-off distance.');
                 $('#maxTakeoffDistance').focus();
                 return false
