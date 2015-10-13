@@ -13,4 +13,9 @@ public class ManageAircraftController extends FlightLoggerBaseController {
     public ModelAndView getList() throws Exception {
         return new ModelAndView("/flightlogger/manage-aircraft-list");
     }
+
+    @RequestMapping(value = "/manage/aircraft/{idx}", method = {RequestMethod.GET})
+    public ModelAndView getAircraftView() throws Exception {
+        return new ModelAndView("/flightlogger/manage-aircraft-view");
+    }
 }
