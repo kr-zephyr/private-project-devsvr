@@ -29,13 +29,6 @@
 
     <div class="row">
       <div class="col-lg-12">
-        <h2>Registered Aircraft Statistics</h2>
-        <p>Total Aircraft : 3</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-12">
         <h2>Aircraft Information</h2>
         <p><a href="${pageContext.request.contextPath}/flightlogger/manage/aircraft/${storeInfo.store.id}/modify"><button class="btn btn-sm btn-primary" type="button">Modify Aircraft</button></a></p>
         <table class="table table-hover">
