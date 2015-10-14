@@ -5,15 +5,55 @@
         $('#aircraft-add-form').submit(function () {
             //TODO form validation 완료해야 함
             if ($('#name').val() == '') {
-                alert('Please input store name.');
+                alert('항공기 이름을 입력해 주세요.');
                 $('#name').focus();
-                return false
+                return false;
             }
 
-            if ($('#maxTakeoffDistance').val() == '') {
-                alert('Please input take-off distance.');
+            if($('#developer').val() == '') {
+                alert('항공기 제조사를 입력해 주세요.');
+                $('#developer').focus();
+                return false;
+            }
+
+            if($('#productUrl').val() == '') {
+                alert('항공기 홈페이지 URL을 입력해 주세요.');
+                $('#productUrl').focus();
+                return false;
+            }
+
+            if ($('#maxRange').val() == '') {
+                alert('순항 거리를 입력해 주세요');
+                $('#maxRange').focus();
+                return false;
+            }
+
+            if($('#maxSpeed').val() == '') {
+                alert('순항 속도를 입력해 주세요.');
+                $('#maxSpeed').focus();
+                return false;
+            }
+
+            if($('#maxTakeoffDistance').val() == '') {
+                alert('이륙 거리를 입력해 주세요.');
                 $('#maxTakeoffDistance').focus();
-                return false
+                return false;
+            }
+
+            if($('#maxLandingDistance').val() == '') {
+                alert('착륙 거리를 입력해 주세요.');
+                $('#maxLandingDistance').focus();
+                return false;
+            }
+
+            // 유료 기체인 경우
+            if($('#commercialFlag').val() == '1') {
+
+                if($('#purchasePrice').val() == '') {
+                    alert('가격을 입력해 주세요.');
+                    $('#purchasePrice').focus();
+                    return false;
+                }
             }
         });
     });
@@ -54,17 +94,17 @@
                 <form id="aircraft-add-form" name="aircraft-add-form" action="${pageContext.request.contextPath}/flightlogger/manage/aircraft" method="post" role="form">
 
                     <div class="form-group">
-                        <label>Aircraft Name</label>
+                        <label>항공기 이름</label>
                         <input class="form-control" placeholder="Enter aircraft name" id="name" name="name"/>
                     </div>
 
                     <div class="form-group">
-                        <label>Aircraft 제조사</label>
+                        <label>항공기 제조사</label>
                         <input class="form-control" placeholder="Enter developer name" id="developer" name="developer"/>
                     </div>
 
                     <div class="form-group">
-                        <label>Aircraft Product URL</label>
+                        <label>항공기 홈페이지 URL</label>
                         <input class="form-control" placeholder="Enter aircraft product url" id="productUrl" name="productUrl"/>
                     </div>
 
@@ -77,13 +117,13 @@
                     </div>
 
                     <!--TODO 유료 시 가격 입력 부분 좀 이쁘게 바꾸자...-->
-                    <div class="form-group">
+                    <div class="form-group" style="display: none;">
                         <label>가격</label>
                         <select class="form-control" id="purchaseCurrency" name="purchaseCurrency">
                             <option value="USD">USD</option>
                             <option value="EUR">EUR</option>
                         </select>
-                        <input class="form-control" placeholder="Enter purchase price" id="purchasePrice" name="purchasePrice"/>
+                        <input type="number" class="form-control" placeholder="Enter purchase price" id="purchasePrice" name="purchasePrice"/>
                         <input class="form-control" placeholder="Enter purchase date" id="purchaseDateTime" name="purchaseDateTime"/>
                         <input type="hidden" id="softwareType" name="softwareType" value="AIRCRAFT"/>
                     </div>
@@ -101,7 +141,7 @@
 
                         <div class="form-group input-group">
                             <span class="input-group-addon">ft</span>
-                            <input class="form-control" placeholder="Enter take-off distance" id="maxTakeoffDistance" name="maxTakeoffDistance"/>
+                            <input type="number" class="form-control" placeholder="Enter take-off distance" id="maxTakeoffDistance" name="maxTakeoffDistance"/>
                         </div>
                     </div>
 
@@ -110,7 +150,7 @@
 
                         <div class="form-group input-group">
                             <span class="input-group-addon">ft</span>
-                            <input class="form-control" placeholder="Enter landing distance" id="maxLandingDistance" name="maxLandingDistance"/>
+                            <input type="number" class="form-control" placeholder="Enter landing distance" id="maxLandingDistance" name="maxLandingDistance"/>
                         </div>
                     </div>
 
@@ -119,7 +159,7 @@
 
                         <div class="form-group input-group">
                             <span class="input-group-addon">nm</span>
-                            <input class="form-control" placeholder="Enter cruise range" id="maxRange" name="maxRange"/>
+                            <input type="number" class="form-control" placeholder="Enter cruise range" id="maxRange" name="maxRange"/>
                         </div>
                     </div>
 
@@ -128,7 +168,7 @@
 
                         <div class="form-group input-group">
                             <span class="input-group-addon">knot</span>
-                            <input class="form-control" placeholder="Enter cruise speed" id="maxSpeed" name="maxSpeed"/>
+                            <input type="number" min="0" max="1000" class="form-control" placeholder="Enter cruise speed" id="maxSpeed" name="maxSpeed"/>
                         </div>
                     </div>
 
