@@ -23,4 +23,24 @@ public class ManageAircraftController extends FlightLoggerBaseController {
     public ModelAndView getAddView() throws Exception {
         return new ModelAndView("/flightlogger/manage-aircraft-add");
     }
+
+    @RequestMapping(value = "/manage/aircraft/add", method = {RequestMethod.POST})
+    public ModelAndView addAircraft() throws Exception {
+        return new ModelAndView("/flightlogger/manage-aircraft-list");
+    }
+
+    @RequestMapping(value = "/manage/aircraft/modify", method = {RequestMethod.GET})
+    public ModelAndView getModifyAircraftView() throws Exception {
+        return new ModelAndView("/flightlogger/manage-aircraft-modify");
+    }
+
+    @RequestMapping(value = "/manage/aircraft/modify/{idx}", method = {RequestMethod.POST})
+    public ModelAndView modifyAircraft() throws Exception {
+        return new ModelAndView("/flightlogger/manage-aircraft-view");
+    }
+
+    @RequestMapping(value = "/manage/aircraft/remove/{idx}", method = {RequestMethod.POST})
+    public ModelAndView removeAircraft() throws Exception {
+        return new ModelAndView("/flightlogger/manage-aircraft-list");
+    }
 }
