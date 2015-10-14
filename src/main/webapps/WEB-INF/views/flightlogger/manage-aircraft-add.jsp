@@ -3,7 +3,6 @@
 <script language="JavaScript">
     $(document).ready(function () {
         $('#aircraft-add-form').submit(function () {
-            //TODO form validation 완료해야 함
             if ($('#name').val() == '') {
                 alert('항공기 이름을 입력해 주세요.');
                 $('#name').focus();
@@ -48,7 +47,6 @@
 
             // 유료 기체인 경우
             if($('#commercialFlag').val() == '1') {
-
                 if($('#purchasePrice').val() == '') {
                     alert('가격을 입력해 주세요.');
                     $('#purchasePrice').focus();
@@ -56,9 +54,18 @@
                 }
             }
         });
+
+        $('#commercialFlag').change(function() {
+            console.log("change selected :: " + $(this).val());
+            if($(this).val() == '0') {
+                $('#commecialInfoForm').css("display", "none");
+            } else if($(this).val() == '1') {
+                $('#commecialInfoForm').css("display", "");
+            }
+        });
+
     });
 
-    //TODO 무료 시 가격에 대한 부분 disable 처리
 </script>
 <%@include file="import/flightlogger-html-topset.jsp" %>
 
@@ -117,7 +124,7 @@
                     </div>
 
                     <!--TODO 유료 시 가격 입력 부분 좀 이쁘게 바꾸자...-->
-                    <div class="form-group" style="display: none;">
+                    <div class="form-group" id="commecialInfoForm" style="display: none;">
                         <label>가격</label>
                         <select class="form-control" id="purchaseCurrency" name="purchaseCurrency">
                             <option value="USD">USD</option>
