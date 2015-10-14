@@ -2,6 +2,7 @@ package com.sz21c.flightlogger.settings.controller;
 
 import com.sz21c.flightlogger.common.controller.FlightLoggerBaseController;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,7 +16,7 @@ public class ManageAircraftController extends FlightLoggerBaseController {
     }
 
     @RequestMapping(value = "/manage/aircraft/{idx}", method = {RequestMethod.GET})
-    public ModelAndView getAircraftView() throws Exception {
+    public ModelAndView getAircraftView(@PathVariable Integer idx) throws Exception {
         return new ModelAndView("/flightlogger/manage-aircraft-view");
     }
 
@@ -35,12 +36,12 @@ public class ManageAircraftController extends FlightLoggerBaseController {
     }
 
     @RequestMapping(value = "/manage/aircraft/modify/{idx}", method = {RequestMethod.POST})
-    public ModelAndView modifyAircraft() throws Exception {
+    public ModelAndView modifyAircraft(@PathVariable Integer idx) throws Exception {
         return new ModelAndView("/flightlogger/manage-aircraft-view");
     }
 
     @RequestMapping(value = "/manage/aircraft/remove/{idx}", method = {RequestMethod.POST})
-    public ModelAndView removeAircraft() throws Exception {
+    public ModelAndView removeAircraft(@PathVariable Integer idx) throws Exception {
         return new ModelAndView("/flightlogger/manage-aircraft-list");
     }
 }
