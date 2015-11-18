@@ -1,7 +1,12 @@
 package com.sz21c.flightlogger.settings.controller;
 
 import com.sz21c.flightlogger.common.controller.FlightLoggerBaseController;
+import com.sz21c.flightlogger.settings.model.AircraftVO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,6 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ManageAircraftController extends FlightLoggerBaseController {
+
+    static final Logger logger = LoggerFactory.getLogger(ManageAircraftController.class);
 
     @RequestMapping(value = "/manage/aircraft", method = {RequestMethod.GET})
     public ModelAndView getList() throws Exception {
@@ -26,7 +33,8 @@ public class ManageAircraftController extends FlightLoggerBaseController {
     }
 
     @RequestMapping(value = "/manage/aircraft/add", method = {RequestMethod.POST})
-    public ModelAndView addAircraft() throws Exception {
+    public ModelAndView addAircraft(@ModelAttribute AircraftVO aircraftVO, Model model) throws Exception {
+        logger.debug(aircraftVO.toString());
         return new ModelAndView("/flightlogger/manage-aircraft-list");
     }
 
