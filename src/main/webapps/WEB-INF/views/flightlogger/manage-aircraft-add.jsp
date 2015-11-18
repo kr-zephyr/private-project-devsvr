@@ -98,7 +98,7 @@
             <div class="col-lg-12">
                 <h2>Add Aircraft</h2>
 
-                <form id="aircraft-add-form" name="aircraft-add-form" action="${pageContext.request.contextPath}/flightlogger/manage/aircraft" method="post" role="form">
+                <form id="aircraft-add-form" name="aircraft-add-form" action="${pageContext.request.contextPath}/flightlogger/manage/aircraft/add" method="post" role="form">
 
                     <div class="form-group">
                         <label>항공기 이름</label>
