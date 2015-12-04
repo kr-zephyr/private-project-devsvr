@@ -42,45 +42,106 @@
             <tr>
               <th>Departure</th>
               <td>
-                <p><input type="text" name="departure_time" placeholder="input departure time" class="form-control"/></p>
+                <p><input type="text" name="departure-time" placeholder="YYYY.MM.DD HH:MM" class="form-control"/></p>
+                <p><input type="text" name="departure-icao" placeholder="ICAO CODE" class="form-control"/></p>
+                <p><input type="text" name="departure-airport" placeholder="Airport Name" class="form-control"/> </p>
+                <p><input type="text" name="departure-scenery-name" placeholder="Use scenery name" class="form-control"/> </p>
+                <p><input type="text" name="departure-scenery-url" placeholder="Use scenery url" class="form-control"/> </p>
                 <p>
-                  <select name="departure_airport" class="form-control">
-                    <option id="rksi">한국 인천 RKSI</option>
-                  </select>
+                  <div class="form-group">
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="DEFAULT"/> DEFAULT SCENERY</label></div>
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="FREEWARE"/> FREEWARE SCENERY</label></div>
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="OVERLAND-INCHEON"/> RKSI - [OVERLAND] INCHEON INTERNATIONAL AIRPORT (Simmarket)</label></div>
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="PIS-manila"/> RPLL - PIS MANILA NINOY AQUINO INTL. (Simmarket)</label></div>
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="PIS-TAOYUAN"/> RPLL - PIS TAIWAN TAOYUAN INT AIRPORT (Simmarket)</label></div>
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="PIS-JEJU"/> RKPC - PIS Jeju International (FSPilotShop)</label></div>
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="TAXI2GATE-HAMAD"/> RPLL - TAXI2GATE HAMAD INTL AIRPORT (Simmarket)</label></div>
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="TAXI2GATE-HONGKONG"/> VHHH - TAXI2GATE HONG KONG INTERNATIONAL AIRPORT (Simmarket)</label></div>
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="WINGCREATION-NARITA"/> RJAA - [WING CREATION INC] NARITA INTERNATIONAL AIRPORT (Simmarket)</label></div>
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="WINGCREATION-NAGASAKI"/> RJFU - [WING CREATION INC] NAGASAKI (Simmarket)</label></div>
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="THAICREATION-DONMUEANG"/> RJFU - [THAI CREATION] SAWASDEE BANGKOK : DON MUEANG INTERNATIONAL AIRP (Simmarket)</label></div>
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="THAICREATION-CHHATRAPATISHIVAJI"/> RJFU - [THAI CREATION] NAMASTE MUMBAI : CHHATRAPATI SHIVAJI INTERNATION (Simmarket)</label></div>
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="THAICREATION-MACAU"/> RJFU - [THAI CREATION] NI HAO MACAU: MACAU INTERNATIONAL AIRPORT (Simmarket)</label></div>
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="THAICREATION-TRIBHUVAN"/> RJFU - [THAI CREATION] NAMASTE NEPAL: TRIBHUVAN INTL AIRPORT (Simmarket)</label></div>
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="IMAGINESIM-SINGAPORE"/> WSSS - [imaginesim] WSSS SINGAPORE (imaginesim)</label></div>
+                    <div class="radio"><label><input type="radio" name="departure-scenery" value="IMAGINESIM-SHANGHAI"/> ZSPD - [imaginesim] ZSPD SHANGHAI PUDONG (imaginesim)</label></div>
+                  </div>
                 </p>
               </td>
             </tr>
             <tr>
               <th>Arrival</th>
               <td>
-                <p><input type="text" name="arrival_time" placeholder="input arrival time" class="form-control"/></p>
+                <p><input type="text" name="arrival-time" placeholder="YYYY.MM.DD HH:MM" class="form-control"/></p>
+                <p><input type="text" name="arrival-icao" placeholder="ICAO CODE" class="form-control"/></p>
+                <p><input type="text" name="arrival-airport" placeholder="Airport Name" class="form-control"/> </p>
+                <p><input type="text" name="arrival-scenery-name" placeholder="Use scenery name" class="form-control"/> </p>
+                <p><input type="text" name="arrival-scenery-url" placeholder="Use scenery url" class="form-control"/> </p>
                 <p>
-                  <select name="arrival_airport" class="form-control">
-                    <option id="rksi">한국 인천 RKSI</option>
-                  </select>
+                <div class="form-group">
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="DEFAULT"/> DEFAULT SCENERY</label></div>
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="FREEWARE"/> FREEWARE SCENERY</label></div>
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="OVERLAND-INCHEON"/> RKSI - [OVERLAND] INCHEON INTERNATIONAL AIRPORT (Simmarket)</label></div>
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="PIS-manila"/> RPLL - PIS MANILA NINOY AQUINO INTL. (Simmarket)</label></div>
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="PIS-TAOYUAN"/> RPLL - PIS TAIWAN TAOYUAN INT AIRPORT (Simmarket)</label></div>
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="PIS-JEJU"/> RKPC - PIS Jeju International (FSPilotShop)</label></div>
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="TAXI2GATE-HAMAD"/> RPLL - TAXI2GATE HAMAD INTL AIRPORT (Simmarket)</label></div>
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="TAXI2GATE-HONGKONG"/> VHHH - TAXI2GATE HONG KONG INTERNATIONAL AIRPORT (Simmarket)</label></div>
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="WINGCREATION-NARITA"/> RJAA - [WING CREATION INC] NARITA INTERNATIONAL AIRPORT (Simmarket)</label></div>
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="WINGCREATION-NAGASAKI"/> RJFU - [WING CREATION INC] NAGASAKI (Simmarket)</label></div>
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="THAICREATION-DONMUEANG"/> RJFU - [THAI CREATION] SAWASDEE BANGKOK : DON MUEANG INTERNATIONAL AIRP (Simmarket)</label></div>
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="THAICREATION-CHHATRAPATISHIVAJI"/> RJFU - [THAI CREATION] NAMASTE MUMBAI : CHHATRAPATI SHIVAJI INTERNATION (Simmarket)</label></div>
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="THAICREATION-MACAU"/> RJFU - [THAI CREATION] NI HAO MACAU: MACAU INTERNATIONAL AIRPORT (Simmarket)</label></div>
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="THAICREATION-TRIBHUVAN"/> RJFU - [THAI CREATION] NAMASTE NEPAL: TRIBHUVAN INTL AIRPORT (Simmarket)</label></div>
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="IMAGINESIM-SINGAPORE"/> WSSS - [imaginesim] WSSS SINGAPORE (imaginesim)</label></div>
+                  <div class="radio"><label><input type="radio" name="arrival-scenery" value="IMAGINESIM-SHANGHAI"/> ZSPD - [imaginesim] ZSPD SHANGHAI PUDONG (imaginesim)</label></div>
+                </div>
                 </p>
               </td>
             </tr>
             <tr>
               <th>Aircraft</th>
               <td>
-                <p>
-                  <select name="aircraft" class="form-control">
-                    <option id="pmdg777300">PMDG 777-300ER</option>
-                  </select>
-                </p>
                 <p><input type="text" placeholder="input used livery or airline company" class="form-control"/></p>
+                <p>
+                <div class="form-group">
+                  <div class="radio"><label><input type="radio" name="aircraft" value="PMDG-777"/> [PMDG] B777-200/300 (PMDG)</label></div>
+                  <div class="radio"><label><input type="radio" name="aircraft" value="PMDG-737NG"/> [PMDG] 737NG (PMDG)</label></div>
+                  <div class="radio"><label><input type="radio" name="aircraft" value="PMDG-747"/> [PMDG] Queen of skies B747-400 (PMDG)</label></div>
+                  <div class="radio"><label><input type="radio" name="aircraft" value="FLIGHT1-146"/> [Flight1] QualityWings Ultimate 146 Collection (FSPilotShop)</label></div>
+                  <div class="radio"><label><input type="radio" name="aircraft" value="REALAIR-LEGACY"/> [RealAir] LANCAIR LEGACY (RealAir)</label></div>
+                </div>
+                </p>
               </td>
             </tr>
             <tr>
               <th>etc Scenery</th>
               <td>
-                <p><input type="checkbox"/> Korea SRTM</p>
+                <div class="form-group">
+                  <div class="radio"><label><input type="checkbox" name="etc-scenery" value="DCMAN-KOREASRTM"/> [DCMAN] Korea SRTM</label></div>
+                  <div class="radio"><label><input type="checkbox" name="etc-scenery" value="ORBX-FTXGLOBALBASE"/> [ORBX] FTX: Global Base (Flight Sim Store)</label></div>
+                  <div class="radio"><label><input type="checkbox" name="etc-scenery" value="ORBX-FTXGLOBALVECTOR"/> [ORBX] FTX: Global VECTOR (Flight Sim Store)</label></div>
+                  <div class="radio"><label><input type="checkbox" name="etc-scenery" value="FREEMESHX-ASIS"/> [FreemeshX] FreemeshX Global - Asia mesh</label></div>
+                </div>
               </td>
             </tr>
             <th>Utility</th>
             <td>
-              <p><input type="checkbox"/> Active Sky Next SP2</p>
+              <div class="form-group">
+                <div class="radio"><label><input type="checkbox" name="utility" value="REX-REX4"/> [REX] REX4 TEXTURE DIRECT HD (Simmarket)</label></div>
+                <div class="radio"><label><input type="checkbox" name="utility" value="REX-SOFTCLOUDS"/> [REX] Soft Clouds (FSPilotShop)</label></div>
+                <div class="radio"><label><input type="checkbox" name="utility" value="HIFITECH-ASN"/> [HIFI TECH] ACTIVE SKY NEXT SP2 (Simmarket)</label></div>
+                <div class="radio"><label><input type="checkbox" name="utility" value="EZDOK-CAMERA"/> [EzDok] Camera (EzDok)</label></div>
+              </div>
+            </td>
+            </tr>
+            <th>AI Traffic</th>
+            <td>
+              <div class="form-group">
+                <div class="radio"><label><input type="checkbox" name="ai-traffic" value="SKYAI"/> SKY AI</label></div>
+                <div class="radio"><label><input type="checkbox" name="ai-traffic" value="ATPK"/> AIR TRAFFIC PROJECT KOREA</label></div>
+                <div class="radio"><label><input type="checkbox" name="ai-traffic" value="ATP"/> ADOBE TRAFFIC PACK</label></div>
+              </div>
             </td>
             </tr>
             <th>Route</th>
