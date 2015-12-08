@@ -14,13 +14,16 @@
 
 <title>Flight Logger</title>
 
+<!-- 공통 CSS -->
+<link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet">
+
 <!-- Bootstrap Core CSS -->
 <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
 <link href="${pageContext.request.contextPath}/css/sb-admin.css" rel="stylesheet">
 
-<!-- Custom Fonts -->
+<!-- Custom Fonts-->
 <link href="${pageContext.request.contextPath}/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
