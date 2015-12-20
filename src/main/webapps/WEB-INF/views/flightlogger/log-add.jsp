@@ -151,6 +151,10 @@
                     <th>Route</th>
                     <td><textarea class="form-control" row="3" name="route"></textarea></td>
                     </tr>
+                    </tr>
+                    <th>총 비행거리</th>
+                    <td><input type="number" class="form-control" row="3" name="flight-distance"/></td>
+                    </tr>
                     </tbody>
                 </table>
                 <button type="submit" class="btn btn-default">Add</button>
