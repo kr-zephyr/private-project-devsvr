@@ -38,7 +38,7 @@
                     <tr>
                         <th>Departure</th>
                         <td>
-                            <p><input type="text" name="departure-time" placeholder="YYYY.MM.DD HH:MM" class="form-control"/></p>
+                            <p><input type="text" name="departure-time" placeholder="YYYY.MM.DD HH:MM" class="form-control input-sm"/></p>
                             <p><input type="text" name="departure-icao" placeholder="ICAO CODE" class="form-control"/></p>
                             <p><input type="text" name="departure-airport" placeholder="Airport Name" class="form-control"/> </p>
                             <p><input type="text" name="departure-scenery-name" placeholder="Use scenery name" class="form-control"/> </p>
@@ -114,6 +114,7 @@
                                 <div class="radio"><label><input type="radio" name="aircraft" value="PMDG-777"/> [PMDG] B777-200/300 (PMDG)</label></div>
                                 <div class="radio"><label><input type="radio" name="aircraft" value="FLIGHT1-146"/> [Flight1] QualityWings Ultimate 146 Collection (FSPilotShop)</label></div>
                                 <div class="radio"><label><input type="radio" name="aircraft" value="REALAIR-LEGACY"/> [RealAir] LANCAIR LEGACY (RealAir)</label></div>
+                                <div class="radio"><label><input type="radio" name="aircraft" value="CARENADO-PC12"/> [Carenado] Pilatus PC12 HD (FSPilotShop)</label></div>
                             </div>
                             </p>
                         </td>
