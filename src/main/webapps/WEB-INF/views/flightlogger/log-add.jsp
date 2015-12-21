@@ -111,11 +111,11 @@
                             <p><input type="text" placeholder="input used livery or airline company" class="form-control"/></p>
                             <p>
                             <div class="form-group">
-                                <div class="radio"><label><input type="radio" name="aircraft" value="PMDG-777-200"/> [PMDG] B777-200 (PMDG)</label></div>
-                                <div class="radio"><label><input type="radio" name="aircraft" value="PMDG-777-300"/> [PMDG] B777-300 (PMDG)</label></div>
-                                <div class="radio"><label><input type="radio" name="aircraft" value="FLIGHT1-146"/> [Flight1] QualityWings Ultimate 146 Collection (FSPilotShop)</label></div>
-                                <div class="radio"><label><input type="radio" name="aircraft" value="REALAIR-LEGACY"/> [RealAir] LANCAIR LEGACY (RealAir)</label></div>
-                                <div class="radio"><label><input type="radio" name="aircraft" value="CARENADO-PC12"/> [Carenado] Pilatus PC12 HD (FSPilotShop)</label></div>
+                                <div class="radio"><label><input type="radio" name="aircraft" value="PMDG_772"/> [PMDG] B777-200 (PMDG)</label></div>
+                                <div class="radio"><label><input type="radio" name="aircraft" value="PMDG_773"/> [PMDG] B777-300 (PMDG)</label></div>
+                                <div class="radio"><label><input type="radio" name="aircraft" value="FLIGHT1_146"/> [Flight1] QualityWings Ultimate 146 Collection (FSPilotShop)</label></div>
+                                <div class="radio"><label><input type="radio" name="aircraft" value="REALAIR_LEGACY"/> [RealAir] LANCAIR LEGACY (RealAir)</label></div>
+                                <div class="radio"><label><input type="radio" name="aircraft" value="CARENADO_PC12"/> [Carenado] Pilatus PC12 HD (FSPilotShop)</label></div>
                             </div>
                             </p>
                         </td>
