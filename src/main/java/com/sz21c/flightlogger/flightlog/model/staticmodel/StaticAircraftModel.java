@@ -4,6 +4,8 @@ public enum StaticAircraftModel {
 
     PMDG_772("B777-200", true, "PMDG", "http://www.precisionmanuals.com/pages/product/FSX/777LRF.html", "PMDG", "http://www.precisionmanuals.com/pages/product/FSX/777LRF.html")
     , PMDG_773("B777-300", true, "PMDG", "http://www.precisionmanuals.com/pages/product/FSX/777LRF.html", "PMDG", "http://www.precisionmanuals.com/pages/product/FSX/777LRF.html")
+    , REALAIR_LEGACY("LANCAIR LEGACY", true, "RealAir", "http://www.realairsimulations.com/legacy/info.php?page=legacy_overview", "RealAir", "http://www.realairsimulations.com/legacy/info.php?page=legacy_overview")
+    , CARENADO_PC12("Pilatus PC12", true, "Carenado", "http://www.carenado.com/CarSite/Portal/index.php", "FSPilotShop", "http://www.fspilotshop.com/carenado-pc12-series-for-fsx-p3d-p-5203.html")
     ;
 
     private String name;
