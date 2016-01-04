@@ -116,6 +116,7 @@
                                 <div class="radio"><label><input type="radio" name="aircraft" value="FLIGHT1_146"/> [Flight1] QualityWings Ultimate 146 Collection (FSPilotShop)</label></div>
                                 <div class="radio"><label><input type="radio" name="aircraft" value="REALAIR_LEGACY"/> [RealAir] LANCAIR LEGACY (RealAir)</label></div>
                                 <div class="radio"><label><input type="radio" name="aircraft" value="CARENADO_PC12"/> [Carenado] Pilatus PC12 HD (FSPilotShop)</label></div>
+                                <div class="radio"><label><input type="radio" name="aircraft" value="A2A_COMANCHE250"/> [A2A Simulations] Comanche 250 (Simmarket)</label></div>
                             </div>
                             </p>
                         </td>
