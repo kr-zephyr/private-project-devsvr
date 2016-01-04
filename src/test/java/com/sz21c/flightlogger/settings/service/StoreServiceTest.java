@@ -2,6 +2,7 @@ package com.sz21c.flightlogger.settings.service;
 
 import com.sz21c.common.TestCommonSetting;
 import com.sz21c.flightlogger.settings.model.StoreVO;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -13,11 +14,10 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+@Slf4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @TestCommonSetting
 public class StoreServiceTest {
-
-    private Logger logger = LoggerFactory.getLogger(StoreServiceTest.class);
 
     private final String STORE_NAME = "test-store";
     private final String STORE_SITE_URL = "http://www.test-store.com";
@@ -33,7 +33,7 @@ public class StoreServiceTest {
         assertNotNull(storeVO.getId());
         assertNotEquals(storeVO.getId(), new Integer(0));
 
-        logger.info("created id :: " + storeVO.getId());
+        log.info("created id :: " + storeVO.getId());
     }
 
     private void commonAddStore(StoreVO storeVO) throws Exception {
@@ -55,9 +55,9 @@ public class StoreServiceTest {
         assertNotNull(storeList);
         assertEquals(storeList.get(0).getId(), storeVO.getId());
 
-        logger.info("store list size is " + storeList.size());
-        logger.info("last created store is " + storeList.get(0).getName());
-        logger.info("id of last created store is " + storeList.get(0).getId());
+        log.info("store list size is " + storeList.size());
+        log.info("last created store is " + storeList.get(0).getName());
+        log.info("id of last created store is " + storeList.get(0).getId());
     }
 
     @Test
