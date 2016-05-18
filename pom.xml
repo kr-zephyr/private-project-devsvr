@@ -154,7 +154,7 @@
                 <filtering>true</filtering>
             </resource>
             <resource>
-                <directory>../properties</directory>
+                <directory>../properties/devsvr</directory>
             </resource>
             <resource>
                 <directory>src/main/java</directory>
