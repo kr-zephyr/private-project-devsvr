@@ -14,6 +14,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 import javax.sql.DataSource;
+import java.util.Properties;
 
 @Configuration
 @MapperScan({"com.sz21c.flightlogger.flightlog.dao"
@@ -31,8 +32,21 @@ public class MyBatisConfig {
         dataSource.setUrl(environment.getProperty("db.mysql.url"));
         dataSource.setUsername(environment.getProperty("db.mysql.username"));
         dataSource.setPassword(environment.getProperty("db.mysql.password"));
+        dataSource.setConnectionProperties(getDataSourceProperties());
 
         return dataSource;
+    }
+
+    private Properties getDataSourceProperties() {
+        Properties properties = new Properties();
+        properties.put("initialSize", environment.getProperty("db.mysql.initialSize"));
+        properties.put("maxIdle", environment.getProperty("db.mysql.maxIdle"));
+        properties.put("maxActive", environment.getProperty("db.mysql.maxActive"));
+        properties.put("validationQuery", environment.getProperty("db.mysql.validationQuery"));
+        properties.put("testWhileIdle", environment.getProperty("db.mysql.testWhileIdle"));
+        properties.put("timeBetweenEvictionRunsMillis", environment.getProperty("db.mysql.timeBetweenEvictionRunsMillis"));
+
+        return properties;
     }
 
     @Bean
